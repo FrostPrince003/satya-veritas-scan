@@ -24,7 +24,7 @@ const Navbar = () => {
           <div className="flex items-center">
             <a href="/" className="flex items-center">
               <img 
-                src="src\components\ui\logo.png" // Use public directory path
+                src="https://res.cloudinary.com/dew9g6sk4/image/upload/v1738262858/wgs0fwr1slfujxosmymj.png" // Use public directory path
                 alt="Satya.AI Logo" 
                 className="h-50 w-48 object-contain brightness-125 contrast-125 dark:brightness-100 dark:contrast-100" // Optimized size and visibility
               />
