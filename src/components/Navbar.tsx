@@ -3,7 +3,12 @@ import { Moon, Sun } from "lucide-react";
 import { useEffect, useState } from "react";
 
 const Navbar = () => {
-  const [isDark, setIsDark] = useState(false);
+  const [isDark, setIsDark] = useState(true); // Changed to true for default dark mode
+
+  useEffect(() => {
+    // Set dark mode by default on initial load
+    document.documentElement.classList.add('dark');
+  }, []); // Empty dependency array means this runs once on mount
 
   useEffect(() => {
     if (isDark) {
@@ -28,8 +33,8 @@ const Navbar = () => {
             <a href="/about" className="text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white transition-colors">
               About Us
             </a>
-            <a href="/extension" className="text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white transition-colors">
-              Download extension
+            <a href="/fact-check" className="text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white transition-colors">
+              Fact Check
             </a>
             <Button variant="outline" className="ml-4">
               Login
