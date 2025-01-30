@@ -3,12 +3,11 @@ import { Moon, Sun } from "lucide-react";
 import { useEffect, useState } from "react";
 
 const Navbar = () => {
-  const [isDark, setIsDark] = useState(true); // Changed to true for default dark mode
+  const [isDark, setIsDark] = useState(true);
 
   useEffect(() => {
-    // Set dark mode by default on initial load
     document.documentElement.classList.add('dark');
-  }, []); // Empty dependency array means this runs once on mount
+  }, []);
 
   useEffect(() => {
     if (isDark) {
@@ -21,12 +20,14 @@ const Navbar = () => {
   return (
     <nav className="fixed top-0 w-full backdrop-blur-lg bg-white/50 dark:bg-black/50 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between h-20"> {/* Increased navbar height */}
           <div className="flex items-center">
             <a href="/" className="flex items-center">
-              <span className="text-2xl font-bold bg-gradient-to-r from-pink-500 to-violet-500 bg-clip-text text-transparent">
-                Satya.AI
-              </span>
+              <img 
+                src="src\components\ui\logo.png" // Use public directory path
+                alt="Satya.AI Logo" 
+                className="h-50 w-48 object-contain brightness-125 contrast-125 dark:brightness-100 dark:contrast-100" // Optimized size and visibility
+              />
             </a>
           </div>
           <div className="flex items-center gap-6">
@@ -53,5 +54,4 @@ const Navbar = () => {
     </nav>
   );
 };
-
 export default Navbar;
