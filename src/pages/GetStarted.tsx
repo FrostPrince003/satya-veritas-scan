@@ -5,6 +5,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { motion } from "framer-motion";
 import { Card } from "@/components/ui/card";
 import { CheckCircle, AlertTriangle, Info } from "lucide-react";
+import Footer from '@/components/Footer';
 
 const GetStarted = () => {
   const [text, setText] = useState('');
@@ -175,6 +176,7 @@ const GetStarted = () => {
             </motion.div>
           )}
         </motion.div>
+        <Footer />
       </div>
     </div>
   );
