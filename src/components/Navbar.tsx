@@ -16,20 +16,24 @@ const Navbar = () => {
       document.documentElement.classList.remove('dark');
     }
   }, [isDark]);
-
+  const darkLogo = "https://res.cloudinary.com/dew9g6sk4/image/upload/v1738262858/wgs0fwr1slfujxosmymj.png"; // Dark mode logo
+  const lightLogo = "https://res.cloudinary.com/drjjof5zw/image/upload/v1738476888/fern79jmw1lrcjloyxqm.png";
   return (
     <nav className="fixed top-0 w-full backdrop-blur-lg bg-white/50 dark:bg-black/50 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20"> {/* Increased navbar height */}
+        <div className="flex items-center justify-between h-20">
+          {/* Logo Section */}
           <div className="flex items-center">
             <a href="/" className="flex items-center">
-              <img 
-                src="https://res.cloudinary.com/dew9g6sk4/image/upload/v1738262858/wgs0fwr1slfujxosmymj.png" // Use public directory path
-                alt="Satya.AI Logo" 
-                className="h-50 w-48 object-contain brightness-125 contrast-125 dark:brightness-100 dark:contrast-100" // Optimized size and visibility
+              <img
+                src={isDark ? darkLogo : lightLogo} // Dynamically change logo based on theme
+                alt="Satya.AI Logo"
+                className="h-50 w-48 object-contain brightness-125 contrast-125 dark:brightness-100 dark:contrast-100"
               />
             </a>
           </div>
+
+          {/* Navigation Links and Buttons */}
           <div className="flex items-center gap-6">
             <a href="/about" className="text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white transition-colors">
               About Us
@@ -40,6 +44,7 @@ const Navbar = () => {
             <Button variant="outline" className="ml-4">
               Login
             </Button>
+            {/* Theme Toggle Button */}
             <Button
               variant="ghost"
               size="icon"
@@ -54,4 +59,5 @@ const Navbar = () => {
     </nav>
   );
 };
+
 export default Navbar;
