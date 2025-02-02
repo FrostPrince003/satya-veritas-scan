@@ -43,11 +43,17 @@ const Navbar = () => {
           <a href="/how-it-works" className="text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white transition-colors">
               How It Works
             </a>
-            <a href="/about" className="text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white transition-colors">
+          <a href="/features" className="text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white transition-colors">
+              Features
+            </a>
+          <a href="/fact-check" className="text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white transition-colors">
+              Fact Check
+            </a>
+          <a href="/about" className="text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white transition-colors">
               About Us
             </a>
-            <a href="/fact-check" className="text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white transition-colors">
-              Fact Check
+          <a href="/contact" className="text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white transition-colors">
+              Contact Us
             </a>
             <Button 
               variant="outline" 
