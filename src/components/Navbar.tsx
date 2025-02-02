@@ -57,6 +57,12 @@ const Navbar = () => {
             <a href="/fact-check" className="text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white transition-colors">
               Fact Check
             </a>
+            <a href="/about" className="text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white transition-colors">
+              About Us
+            </a>
+            <a href="/contact" className="text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white transition-colors">
+              Contact Us
+            </a>
             <Button 
               variant="outline" 
               className="ml-4"
