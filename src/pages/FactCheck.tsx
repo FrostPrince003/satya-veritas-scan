@@ -40,8 +40,8 @@ const FactCheck = () => {
   };
 
   const handleBack = () => {
-    setShowResults(false);
-    setText('');
+    // setShowResults(false);
+    // setText('');
   };
 
   return (
