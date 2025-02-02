@@ -35,6 +35,9 @@ const Navbar = () => {
 
           {/* Navigation Links and Buttons */}
           <div className="flex items-center gap-6">
+          <a href="/how-it-works" className="text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white transition-colors">
+              How It Works
+            </a>
             <a href="/about" className="text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white transition-colors">
               About Us
             </a>

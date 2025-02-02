@@ -1,7 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Shield, Brain, Globe } from 'lucide-react';
+import { Shield, Brain, Globe, Award } from 'lucide-react';
 import Navbar from '@/components/Navbar';
+import Footer from '@/components/Footer';
 
 const About = () => {
   const features = [
@@ -20,6 +21,12 @@ const About = () => {
       title: 'Global Coverage',
       description: 'Analyze news and information from sources worldwide in multiple languages.',
     },
+    {
+      icon: Award,
+      title: "Trust",
+      description: "Building a more informed society through reliable news verification."
+    },
+  
   ];
 
   return (
@@ -36,7 +43,7 @@ const About = () => {
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl font-bold mb-6 bg-gradient-to-r from-pink-500 to-violet-500 bg-clip-text text-transparent">
+            <h2 className="text-4xl pt-10 font-bold mb-6 bg-gradient-to-r from-pink-500 to-violet-500 bg-clip-text text-transparent">
               About Satya.AI
             </h2>
             <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
@@ -44,7 +51,7 @@ const About = () => {
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-16">
             {features.map((feature, index) => (
               <motion.div
                 key={index}
@@ -61,10 +68,31 @@ const About = () => {
                   {feature.description}
                 </p>
               </motion.div>
+              
             ))}
           </div>
-        </div>
+          <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.6 }}
+        className="max-w-2xl mx-auto text-center pb-16"
+      >
+        <h2 className="text-2xl font-semibold mb-4">Our Mission</h2>
+        <p className="text-lg text-muted-foreground">
+          Our mission is to empower users with the tools they need to identify and
+          combat misinformation in the digital age. Through advanced AI technology
+          and collaboration with trusted sources, we're building a more informed
+          and discerning online community.
+        </p>
+      </motion.div>
+      
       </div>
+      <Footer />
+
+        
+      </div>
+      
+      
     </div>
   );
 };
