@@ -2,9 +2,11 @@ import { Button } from "@/components/ui/button";
 import Navbar from "@/components/Navbar";
 import { ArrowRight } from "lucide-react";
 import { useEffect, useRef } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Index = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -105,7 +107,8 @@ const Index = () => {
           
           <Button 
             size="lg" 
-            className="animate-fade-in [animation-delay:600ms] group"
+            className="animate-fade-in [animation-delay:600ms] group transition-all duration-300 hover:bg-purple-600"
+            onClick={() => navigate('/login')}
           >
             Get Started
             <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
