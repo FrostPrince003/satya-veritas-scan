@@ -2,9 +2,11 @@ import { Button } from "@/components/ui/button";
 import { Moon, Sun, Download } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
+import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
   const [isDark, setIsDark] = useState(true);
+  const navigate = useNavigate();
 
   useEffect(() => {
     document.documentElement.classList.add('dark');
@@ -44,7 +46,11 @@ const Navbar = () => {
             <a href="/fact-check" className="text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white transition-colors">
               Fact Check
             </a>
-            <Button variant="outline" className="ml-4">
+            <Button 
+              variant="outline" 
+              className="ml-4"
+              onClick={() => navigate('/login')}
+            >
               Login
             </Button>
 
