@@ -9,6 +9,7 @@ import FactCheck from "./pages/FactCheck";
 import GetStarted from "./pages/GetStarted";
 import NotFound from "./pages/NotFound";
 import HowItWorks from "./pages/HowItWorks";
+import Login from "./pages/Login";
 
 const queryClient = new QueryClient();
 
@@ -24,6 +25,7 @@ const App = () => (
           <Route path="/about" element={<About />} />
           <Route path="/fact-check" element={<FactCheck />} />
           <Route path="/get-started" element={<GetStarted />} />
+          <Route path="/login" element={<Login />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
