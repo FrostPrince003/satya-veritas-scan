@@ -9,19 +9,21 @@ const Navbar = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    document.documentElement.classList.add('dark');
+    document.documentElement.classList.add("dark");
   }, []);
 
   useEffect(() => {
     if (isDark) {
-      document.documentElement.classList.add('dark');
+      document.documentElement.classList.add("dark");
     } else {
-      document.documentElement.classList.remove('dark');
+      document.documentElement.classList.remove("dark");
     }
   }, [isDark]);
 
-  const darkLogo = "https://res.cloudinary.com/dew9g6sk4/image/upload/v1738262858/wgs0fwr1slfujxosmymj.png";
-  const lightLogo = "https://res.cloudinary.com/drjjof5zw/image/upload/v1738476888/fern79jmw1lrcjloyxqm.png";
+  const darkLogo =
+    "https://res.cloudinary.com/dew9g6sk4/image/upload/v1738262858/wgs0fwr1slfujxosmymj.png";
+  const lightLogo =
+    "https://res.cloudinary.com/drjjof5zw/image/upload/v1738476888/fern79jmw1lrcjloyxqm.png";
 
   return (
     <nav className="fixed top-0 w-full backdrop-blur-lg bg-white/50 dark:bg-black/50 z-50">
@@ -33,27 +35,27 @@ const Navbar = () => {
               <img
                 src={isDark ? darkLogo : lightLogo}
                 alt="Satya.AI Logo"
-                className="h-50 w-48 object-contain brightness-125 contrast-125 dark:brightness-100 dark:contrast-100"
+                className="h-40 w-50 object-contain brightness-125 contrast-125 dark:brightness-100 dark:contrast-100"
               />
             </a>
           </div>
 
           {/* Navigation Links and Buttons */}
           <div className="flex items-center gap-6">
-          <a href="/how-it-works" className="text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white transition-colors">
+            <a
+              href="/how-it-works"
+              className="text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white transition-colors"
+            >
               How It Works
             </a>
-          <a href="/features" className="text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white transition-colors">
+          <a
+              href="/features"
+              className="text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white transition-colors"
+            >
               Features
             </a>
-          <a href="/fact-check" className="text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white transition-colors">
+            <a href="/fact-check" className="text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white transition-colors">
               Fact Check
-            </a>
-          <a href="/about" className="text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white transition-colors">
-              About Us
-            </a>
-          <a href="/contact" className="text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white transition-colors">
-              Contact Us
             </a>
             <Button 
               variant="outline" 
@@ -71,7 +73,7 @@ const Navbar = () => {
                     variant="ghost"
                     size="icon"
                     className="ml-2"
-                    onClick={() => window.open('https://chrome.google.com/webstore', '_blank')}
+                    onClick={() => window.open("https://chrome.google.com/webstore", "_blank")}
                   >
                     <Download className="h-5 w-5" />
                   </Button>
@@ -83,12 +85,7 @@ const Navbar = () => {
             </TooltipProvider>
 
             {/* Theme Toggle Button */}
-            <Button
-              variant="ghost"
-              size="icon"
-              onClick={() => setIsDark(!isDark)}
-              className="ml-2"
-            >
+            <Button variant="ghost" size="icon" onClick={() => setIsDark(!isDark)} className="ml-2">
               {isDark ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
             </Button>
           </div>
