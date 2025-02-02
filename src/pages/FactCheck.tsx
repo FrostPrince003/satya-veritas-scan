@@ -39,6 +39,11 @@ const FactCheck = () => {
     }, 2000);
   };
 
+  const handleBack = () => {
+    setShowResults(false);
+    setText('');
+  };
+
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
