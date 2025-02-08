@@ -48,25 +48,40 @@ const Navbar = () => {
             >
               How It Works
             </a>
-          <a
+            <a
               href="/features"
               className="text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white transition-colors"
             >
               Features
             </a>
-            <a href="/fact-check" className="text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white transition-colors">
+            <a
+              href="/explore" // Added Explore Link
+              className="text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white transition-colors"
+            >
+              Explore
+            </a>
+            <a
+              href="/fact-check"
+              className="text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white transition-colors"
+            >
               Fact Check
             </a>
-            <a href="/about" className="text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white transition-colors">
+            <a
+              href="/about"
+              className="text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white transition-colors"
+            >
               About Us
             </a>
-            <a href="/contact" className="text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white transition-colors">
+            <a
+              href="/contact"
+              className="text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white transition-colors"
+            >
               Contact Us
             </a>
-            <Button 
-              variant="outline" 
+            <Button
+              variant="outline"
               className="ml-4"
-              onClick={() => navigate('/login')}
+              onClick={() => navigate("/login")}
             >
               Login
             </Button>
@@ -79,7 +94,9 @@ const Navbar = () => {
                     variant="ghost"
                     size="icon"
                     className="ml-2"
-                    onClick={() => window.open("https://chrome.google.com/webstore", "_blank")}
+                    onClick={() =>
+                      window.open("https://chrome.google.com/webstore", "_blank")
+                    }
                   >
                     <Download className="h-5 w-5" />
                   </Button>
@@ -91,7 +108,12 @@ const Navbar = () => {
             </TooltipProvider>
 
             {/* Theme Toggle Button */}
-            <Button variant="ghost" size="icon" onClick={() => setIsDark(!isDark)} className="ml-2">
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={() => setIsDark(!isDark)}
+              className="ml-2"
+            >
               {isDark ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
             </Button>
           </div>

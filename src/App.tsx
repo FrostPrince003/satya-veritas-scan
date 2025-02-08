@@ -12,6 +12,7 @@ import HowItWorks from "./pages/HowItWorks";
 import Login from "./pages/Login";
 import Contact from "./pages/Contact";
 import Features from "./pages/Features";
+import ExplorePage from "./pages/ExplorePage";
 
 
 const queryClient = new QueryClient();
@@ -25,6 +26,8 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/how-it-works" element={<HowItWorks />} />
+          {/* <Route path="/explore" element={<Explore />} /> */}
+          <Route path="/explore" element={<ExplorePage />} />
           <Route path="/about" element={<About />} />
           <Route path="/fact-check" element={<FactCheck />} />
           <Route path="/get-started" element={<GetStarted />} />
