@@ -10,37 +10,30 @@ const FactCheck = () => {
 
   const handleAnalyze = async (text: string) => {
     setIsAnalyzing(true);
-    
-    // Simulate API call
-    setTimeout(() => {
-      const fakeData = {
-        verdict_agent: {
-          findings: "LIKELY TRUE", // Change to "FALSE" for testing
+    try {
+      // Send a POST request to your FastAPI endpoint
+      const response = await fetch("http://127.0.0.1:8000/verify", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
         },
-        fact_checking_agent: {
-          conclusion: "The article contains accurate information.",
-          sources: ["https://example.com/source1"],
-        },
-        political_analyst_agent: {
-          conclusion: "No significant political bias detected.",
-          sources: ["https://example.com/source2"],
-        },
-        media_bias_analyst_agent: {
-          conclusion: "Media coverage appears neutral.",
-          sources: ["https://example.com/source3"],
-        },
-        public_sentiment_analyst_agent: {
-          conclusion: "Public reception is mostly positive.",
-          sources: [],
-        },
-        summary_agent: {
-          main_conclusion: "The article appears to be credible based on available sources.",
-        },
-      };
+        // The backend expects a JSON payload with a "query" field.
+        body: JSON.stringify({ query: text }),
+      });
 
-      setAnalysisResult(fakeData);
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+
+      // Parse the JSON response
+      const data = await response.json();
+      console.log("Received API data:", data);
+      setAnalysisResult(data);
+    } catch (error) {
+      console.error("Error fetching analysis:", error);
+    } finally {
       setIsAnalyzing(false);
-    }, 2000);
+    }
   };
 
   return (
@@ -54,6 +47,7 @@ const FactCheck = () => {
           Paste any article to analyze its credibility using our AI-powered system.
         </p>
 
+        {/* The ArticleInput component calls the handleAnalyze callback when the Analyze button is clicked */}
         {!analysisResult ? (
           <ArticleInput onAnalyze={handleAnalyze} isAnalyzing={isAnalyzing} />
         ) : (
