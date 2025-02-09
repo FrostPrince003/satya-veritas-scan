@@ -36,7 +36,6 @@ export const AnalysisResult = ({ credibilityScore, sources }: AnalysisResultProp
           <Progress 
             value={credibilityScore} 
             className="h-2 bg-gray-200 dark:bg-gray-800"
-            indicatorClassName="bg-green-500 dark:bg-green-500!"
           />
         </div>
         <span className={`text-2xl font-bold ${getCredibilityColor(credibilityScore)}`}>
